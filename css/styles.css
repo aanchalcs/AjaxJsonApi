@@ -1,0 +1,36 @@
+body {
+	background-color: lightyellow;
+
+}
+
+h1 {
+	text-align: center;
+	color: darkgreen;
+	font-variant: small-caps;
+	font-family: 'Fjalla One', sans-serif;
+}
+
+.content {
+	text-align: center;
+	font-family: 'Cantarell', sans-serif;
+}
+
+.content li {
+	text-transform: lowercase;
+    margin-bottom: 1em;
+}
+.content ul {
+	list-style-type:none
+}
+
+.fa-refresh{
+    font-size: 5em;
+    color: purple;
+    position: relative;
+    left: 45%;
+    margin-top: 1em;
+}
+
+.content span {
+    text-transform: capitalize;
+}

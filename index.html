@@ -1,0 +1,289 @@
+<!-- 
+Created By : Aanchal Mishra
+Application : This application pulls json data from an open data Api and display the data on the screen. Uses jQuery, AJAX, JSON, public API, Bootstrap, HTML5, CSS3
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Colorado Data Pull Example</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/topcoat/0.8.0/css/topcoat-desktop-light.min.css">
+	<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+	<link href="http://fonts.googleapis.com/css?family=Fjalla+One|Cantarell:400,400italic,700italic,700" rel="stylesheet" type="text/css" />
+	<link href="css/styles.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="content">
+<h1>Pulling JSON data from an open data API</h1>
+Choose: <em><strong>[Zip City County]</strong></em>
+<br><br>
+<select>
+<option>
+80001		Arvada Jefferson 	
+</option><option>
+80002		Arvada Jefferson 	
+</option><option>
+80003		Arvada Jefferson 	
+</option><option>
+80004		Arvada Jefferson 	
+</option> <option>
+80026		Lafayette Boulder 	
+</option><option>
+80027		Louisville Boulder 	
+</option><option>
+80028		Louisville Boulder 	
+</option><option>
+80030		Westminster Adams 	
+</option><option>
+80031		Westminster Adams 	
+</option><option>
+80033		Wheat Ridge Jefferson 	
+</option><option>
+80034		Wheat Ridge Jefferson 	
+</option><option>
+80035		Westminster Adams 	
+</option><option>
+80260		Denver 	Adams 	
+</option><option>
+80261		Denver 	Denver 	
+</option><option>
+80262		Denver 	Denver 	
+</option><option>
+80263		Denver 	Denver 	
+</option><option>
+80264		Denver 	Denver 	
+</option><option>
+80265		Denver 	Denver 	
+</option><option>
+80266		Denver 	Denver 	
+</option><option>
+80271		Denver 	Denver 	
+</option><option>
+80273		Denver 	Denver 	
+</option><option>
+80274		Denver 	Denver 	
+</option><option>
+80279		Denver 	Denver 	
+</option><option>
+80280		Denver 	Denver 	
+</option><option>
+80281		Denver 	Denver 	
+</option><option>
+80290		Denver 	Denver 	
+</option><option>
+80291		Denver 	Denver 	
+</option><option>
+80293		Denver 	Denver 	
+</option><option>
+80294		Denver 	Denver 	
+</option><option>
+80295		Denver 	Denver 	
+</option><option>
+80299		Denver 	Denver 	
+</option><option>
+80301		Boulder 	Boulder 	
+</option><option>
+80302		Boulder 	Boulder 	
+</option><option>
+80303		Boulder 	Boulder 	
+</option><option>
+80304		Boulder 	Boulder 	
+</option><option>
+80305		Boulder 	Boulder 	
+</option><option>
+80306		Boulder 	Boulder 	
+</option><option>
+80307		Boulder 	Boulder 	
+</option><option>
+80308		Boulder 	Boulder 	
+</option><option>
+80309		Boulder 	Boulder 	
+</option><option>
+80310		Boulder 	Boulder 	
+</option><option>
+80314		Boulder 	Boulder 	
+</option><option>
+80321		Boulder 	Boulder 	
+</option><option>
+80322		Boulder 	Boulder 	
+</option><option>
+80323		Boulder 	Boulder 	
+</option><option>
+80328		Boulder 	Boulder 	
+</option><option>
+80329		Boulder 	Boulder 	
+</option><option>
+80401		Golden 	Jefferson 	
+</option><option>
+80402		Golden 	Jefferson 	
+</option><option>
+80403		Golden 	Jefferson 	
+</option><option>
+80419		Golden 	Jefferson 	
+</option><option>
+80420		Alma 	Park 	
+</option><option>
+80421		Bailey 	Park 	
+</option><option>
+80422		Black Hawk 	Gilpin 	
+</option><option>
+80423		Bond 	Eagle 	
+</option><option>
+80424		Breckenridge 	Summit 	
+</option><option>
+80425		Buffalo Creek 	Jefferson 	
+</option><option>
+80426		Burns 	Eagle 	
+</option><option>
+80427		Central City 	Gilpin 	
+</option><option>
+80428		Clark 	Routt 	
+</option><option>
+80429		Climax 	Lake 	
+</option><option>
+80430		Coalmont 	Jackson 	
+</option><option>
+80432		Como 	Park 	
+</option><option>
+80433		Conifer 	Jefferson 	
+</option><option>
+80434		Cowdrey 	Jackson 	
+</option><option>
+80435		Dillon 	Summit 	
+</option><option>
+80436		Dumont 	Clear Creek 	
+</option><option>
+80437		Evergreen 	Jefferson 	
+</option><option>
+80438		Empire 	Clear Creek 	
+</option><option>
+80439		Evergreen 	Jefferson 	
+</option><option>
+80440		Fairplay 	Park 	
+</option><option>
+80442		Fraser 	Grand 	
+</option><option>
+80443		Frisco 	Summit 	
+</option><option>
+80444		Georgetown 	Clear Creek 	
+</option><option>
+80446		Granby 	Grand 	
+</option><option>
+80447		Grand Lake 	Grand 	
+</option><option>
+80919		Colorado Springs 	El Paso 	
+</option><option>
+80920		Colorado Springs 	El Paso 	
+</option><option>
+80921		Colorado Springs 	El Paso 	
+</option><option>
+80922		Colorado Springs 	El Paso 	
+</option><option>
+80923		Colorado Springs 	El Paso 	
+</option><option>
+80924		Colorado Springs 	El Paso 	
+</option><option>
+80925		Colorado Springs 	El Paso 	
+</option><option>
+80926		Colorado Springs 	El Paso 	
+</option><option>
+80927		Colorado Springs 	El Paso 	
+</option><option>
+80928		Colorado Springs 	El Paso 	
+</option><option>
+80929		Colorado Springs 	El Paso 	
+</option><option>
+80930		Colorado Springs 	El Paso 	
+</option><option>
+80931		Colorado Springs 	El Paso 	
+</option><option>
+80932		Colorado Springs 	El Paso 	
+</option><option>
+80933		Colorado Springs 	El Paso 	
+</option><option>
+80934		Colorado Springs 	El Paso 	
+</option><option>
+80935		Colorado Springs 	El Paso 	
+</option><option>
+80936		Colorado Springs 	El Paso 	
+</option><option>
+80937		Colorado Springs 	El Paso 	
+</option><option>
+80938		Colorado Springs 	El Paso 	
+</option><option>
+80939		Colorado Springs 	El Paso 	
+</option><option>
+80940		Colorado Springs 	El Paso 	
+</option><option>
+80941		Colorado Springs 	El Paso 	
+</option><option>
+80942		Colorado Springs 	El Paso 	
+</option><option>
+80943		Colorado Springs 	El Paso 	
+</option><option>
+80944		Colorado Springs 	El Paso 	
+</option><option>
+80945		Colorado Springs 	El Paso 	
+</option><option>
+80946		Colorado Springs 	El Paso 	
+</option><option>
+80947		Colorado Springs 	El Paso 	
+</option><option>
+81154		South Fork 	Rio Grande 	
+</option><option>
+81155		Villa Grove 	Saguache 	
+</option><option>
+81157		Pagosa Springs 	Archuleta 	
+</option><option>
+81201		Salida 	Chaffee 	
+</option><option>
+81210		Almont 	Gunnison 	
+</option><option>
+81211		Buena Vista 	Chaffee 	
+</option><option>
+81212		Canon City 	Fremont 	
+</option><option>
+81215		Canon City 	Fremont 	
+</option><option>
+81220		Cimarron 	Montrose 	
+</option><option>
+81221		Coal Creek 	Fremont 	
+</option><option>
+81222		Coaldale 	Fremont 	
+</option><option>
+81223		Cotopaxi 	Fremont 	
+</option><option>
+81224		Crested Butte 	Gunnison 	
+</option><option>
+81225		Crested Butte 	Gunnison 	
+</option><option>
+81226		Florence 	Fremont 	
+</option><option>
+81227		Monarch 	Chaffee 	
+</option><option>
+81228		Granite 	Chaffee 	
+</option><option>
+81230		Gunnison 	Gunnison 	
+</option><option>
+81231		Gunnison 	Gunnison 	
+</option><option>
+81232		Hillside 	Fremont 	
+</option><option>
+81233		Howard 	Fremont 	
+</option><option>
+81235		Lake City 	Hinsdale 	
+</option>
+</select>
+
+<button id="btn1">Click To Get Data</button>
+
+</div>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="js/pull.js"></script>
+</body>
+</html>
